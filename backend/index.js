@@ -24,16 +24,7 @@ const io = require("socket.io")(server, {
   },
 });
 
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
-  .then((err, client) => {
-    server.listen(process.env.PORT, () => {
-      console.log("connected to localhost:" + process.env.PORT + " and DB");
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+
 
 let onlineUsers = [];
 
